@@ -1,7 +1,3 @@
-# airflow
-GB: Настройка потоков данных. Apache Airflow
-
-
 # GB: Настройка потоков данных. Apache Airflow
 > **Geek University Data Engineering**
 
