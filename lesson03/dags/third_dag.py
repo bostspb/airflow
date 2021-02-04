@@ -1,30 +1,5 @@
 """
-ssh root@79.143.30.194
-u3kn1zbaw9
-
-airflow webserver -p 8181
-airflow scheduler
-
-http://79.143.30.194:8181/home
-
-postgres
-Pe4g5k$kkrz6
-
-airflow
-airflow
-
-postgres_default
-
-sudo -u postgres psql
-CREATE database titanic;
-GRANT all privileges on database titanic to airflow;
-\q
-
-
-названия таблиц
-
-
-
+Задание:
 1. Все функции вынесены в отдельный модуль и в DAG файле только сама структура графа (директория модулей должна быть в PATH)
 2. Отказ от работы с локальными файлами:
     - сначала скачанный датасет пушится в XCom (он весит ~50 КБ)
@@ -45,7 +20,6 @@ path = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 sys.path.insert(0, path)
 
 from modules.utils import get_titanic_dataset, pivot_dataset, mean_fare_per_class
-import modules.config as cfg
 
 
 # базовые аргументы DAG
@@ -79,16 +53,18 @@ with DAG(
     create_pg_tables = PostgresOperator(
         task_id='create_table',
         sql='''
-            CREATE TABLE IF NOT EXISTS titanic.pivot(                
+            CREATE TABLE IF NOT EXISTS {{ var.value.pg_table_pivot }}(                
                 sex VARCHAR (8) NOT NULL,
                 class01 integer NOT NULL, 
                 class02 integer NOT NULL, 
                 class03 integer NOT NULL
             );
-            CREATE TABLE IF NOT EXISTS titanic.mean_fare_per_class(
+            TRUNCATE TABLE {{ var.value.pg_table_pivot }};
+            CREATE TABLE IF NOT EXISTS {{ var.value.pg_table_mean_fare_per_class }}(
                 pclass integer NOT NULL, 
                 fare numeric NOT NULL
-            );        
+            );    
+            TRUNCATE TABLE {{ var.value.pg_table_mean_fare_per_class }};    
         ''',
         dag=dag,
     )
