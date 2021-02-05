@@ -1,7 +1,7 @@
 # GB: Настройка потоков данных. Apache Airflow
 > **Geek University Data Engineering**
 
-`Apache Airflow` `crontab` `Jupyter Notebook`
+`Apache Airflow` `TaskFlow API` `crontab` `Jupyter Notebook` 
 
 ### Урок 1. Планирование задач. Введение Apache AirFlow
 
@@ -91,3 +91,31 @@ execution date в формате YYYY-MM-DD. Пример строки: "Pipelin
 [Variables](https://github.com/bostspb/airflow/blob/main/lesson03/variables.png) <br>
 [XComs](https://github.com/bostspb/airflow/blob/main/lesson03/xcoms.png) <br>
 [Queries](https://github.com/bostspb/airflow/blob/main/lesson03/queries.png) <br>
+
+
+### Урок 4. Airflow в production. Примеры реальных задач
+
+**Задание** <br>
+Перепишите пайплайн из предыдущего д/з с использованием новой фичи Airflow 2.0 - [TaskFlow API](https://airflow.apache.org/docs/apache-airflow/stable/tutorial_taskflow_api.html).
+
+**Формат сдачи д/з** <br>
+Приложите ссылку на ваш Git с кодом DAG'а.
+
+**Дополнительные материалы**
+1. [Airflow – платформа для разработки, планирования и мониторинга рабочих процессов](https://www.youtube.com/watch?v=A6YuWmwaTSw)
+2. [Production Deployment](https://airflow.apache.org/docs/apache-airflow/stable/production-deployment.html)
+3. [Best Practices](https://airflow.apache.org/docs/apache-airflow/stable/best-practices.html)
+4. [Airflow FAQ](https://airflow.apache.org/docs/apache-airflow/stable/faq.html)
+5. [7 достоинств и 5 недостатков Apache AirFlow](https://medium.com/@bigdataschool/7-достоинств-и-5-недостатков-apache-airflow-39fbbc80e702)
+6. [Apache Airflow: автоматизация сбора ежедневных вложений электронной почты](https://www.machinelearningmastery.ru/apache-airflow-automating-the-collection-of-daily-email-attachments-213bc7128d3a/)
+7. [Quick guide: How to run Apache Airflow with docker-compose](https://medium.com/@xnuinside/quick-guide-how-to-run-apache-airflow-cluster-in-docker-compose-615eb8abd67a)
+8. [Airflow vs. Luigi: Which ETL Tool is the Best? ](https://www.xplenty.com/blog/airflow-vs-luigi/)
+9. [Строим Data Pipeline на Python и Luigi](https://khashtamov.com/ru/data-pipeline-luigi-python/)
+10. [How to Setup Airflow Multi-Node Cluster with Celery & RabbitMQ ](https://medium.com/@khatri_chetan/how-to-setup-airflow-multi-node-cluster-with-celery-rabbitmq-cfde7756bb6a)
+11. [Обзор фреймворка Luigi для построения последовательностей выполнения задач ](https://habr.com/ru/company/otus/blog/339904/)
+12. [Airflow vs. Luigi ](https://www.astronomer.io/guides/airflow-vs-luigi)
+13. [AirFlow KubernetesExecutor: 3 способа запуска и 4 главных плюса для DevOps-инженера](https://medium.com/@bigdataschool/airflow-kubernetesexecutor-3-%D1%81%D0%BF%D0%BE%D1%81%D0%BE%D0%B1%D0%B0-%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA%D0%B0-%D0%B8-4-%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D1%8B%D1%85-%D0%BF%D0%BB%D1%8E%D1%81%D0%B0-%D0%B4%D0%BB%D1%8F-devops-%D0%B8%D0%BD%D0%B6%D0%B5%D0%BD%D0%B5%D1%80%D0%B0-cefd3acc833e)
+
+
+**Решение** <br>
+[DAG](https://github.com/bostspb/airflow/blob/main/lesson04/forth_dag.py)
