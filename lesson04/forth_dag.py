@@ -60,7 +60,7 @@ def titanic_pipeline_taskflow():
         pg_hook = PostgresHook()
         pg_insert = f'insert into {Variable.get("pg_table_pivot")} (sex, class01, class02, class03) values (%s, %s, %s, %s)'
         for row in data:
-            pg_hook.run(pg_insert, parameters=(row['Sex'], row[1], row[2], row[3],))
+            pg_hook.run(pg_insert, parameters=(row['Sex'], row['1'], row['2'], row['3'],))
         return True
 
     @task()
