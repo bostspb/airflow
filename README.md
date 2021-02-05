@@ -1,7 +1,7 @@
 # GB: Настройка потоков данных. Apache Airflow
 > **Geek University Data Engineering**
 
-`Apache Airflow` `TaskFlow API` `crontab` `Jupyter Notebook` 
+`Apache Airflow` `TaskFlow API` `crontab` `Jupyter Notebook` `PostgreSQL`
 
 ### Урок 1. Планирование задач. Введение Apache AirFlow
 
